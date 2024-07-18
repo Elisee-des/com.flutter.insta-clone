@@ -1,0 +1,17 @@
+safiatou@safiatou-Aspire-E5-774G:~/Bureau/Mobiles Projets/doctorapp$ firebase apps:create android doctorapp --package-name=com.example.instagram --json --project=instagram-bd4f6
+✔ Creating your Android app
+{
+  "status": "success",
+  "result": {
+    "@type": "type.googleapis.com/google.firebase.service.v1beta1.AndroidApp",
+    "name": "projects/instagram-bd4f6/androidApps/1:719287824090:android:d35be8ea40baaf1f377fe3",
+    "appId": "1:719287824090:android:d35be8ea40baaf1f377fe3",
+    "displayName": "doctorapp",
+    "projectId": "instagram-bd4f6",
+    "packageName": "com.example.instagram",
+    "apiKeyId": "83cc4e49-1810-4d7c-b283-cc4b6be92473",
+    "state": "ACTIVE",
+    "expireTime": "1970-01-01T00:00:00Z",
+    "etag": "1_33a0cca6-094f-4573-aee5-951290e50825"
+  }
+}safiatou@safiatou-Aspire-E5-774G:~/Bureau/Mobiles Projets/doctorapp$ 
