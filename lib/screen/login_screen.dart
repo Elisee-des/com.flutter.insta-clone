@@ -1,3 +1,4 @@
+import 'package:doctorapp/data/firebase_service/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -74,17 +75,22 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget Login() {
     return Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.r),
-          child: Container(
-            alignment: Alignment.center,
-            width: double.infinity,
-            height: 44.h,
-            decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(10.r)),
-            child: Text(
-              'Connexion',
-              style: TextStyle(
-                  fontSize: 13.sp,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold)  
+          child: InkWell(
+            onTap: () {
+              Authentification().Login(email: email.text, password: password.text);
+            },
+            child: Container(
+              alignment: Alignment.center,
+              width: double.infinity,
+              height: 44.h,
+              decoration: BoxDecoration(color: Colors.black, borderRadius: BorderRadius.circular(10.r)),
+              child: Text(
+                'Connexion',
+                style: TextStyle(
+                    fontSize: 13.sp,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold)  
+              ),
             ),
           ),
         );
