@@ -1,5 +1,6 @@
-import 'package:doctorapp/screen/explore_screen.dart';
+import 'package:doctorapp/screen/explor_screen.dart';
 import 'package:doctorapp/screen/home.dart';
+import 'package:doctorapp/screen/add_screen.dart';
 import 'package:doctorapp/screen/profile_screen.dart';
 import 'package:doctorapp/screen/reels_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -53,20 +54,27 @@ class _Navigations_ScreenState extends State<Navigations_Screen> {
           unselectedItemColor: Colors.grey,
           currentIndex: _currentIndex,
           onTap: navigationTapped,
-          items: const [
-             BottomNavigationBarItem(
+          items: [
+            const BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: '',
             ),
-             BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(Icons.search),
               label: '',
             ),
-             BottomNavigationBarItem(
+            const BottomNavigationBarItem(
               icon: Icon(Icons.camera),
               label: '',
             ),
-             BottomNavigationBarItem(
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                'images/instagram-reels-icon.png',
+                height: 20.h,
+              ),
+              label: '',
+            ),
+            const BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: '',
             ),
@@ -76,9 +84,10 @@ class _Navigations_ScreenState extends State<Navigations_Screen> {
       body: PageView(
         controller: pageController,
         onPageChanged: onPageChanged,
-        children: const [
+        children: [
           HomeScreen(),
-          ExploreScreen(),
+          ExplorScreen(),
+          AddScreen(),
           ReelsScreen(),
           ProfileScreen(),
         ],
