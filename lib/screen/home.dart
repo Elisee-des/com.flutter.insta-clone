@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doctorapp/widgets/post_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,6 +14,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final List<Widget> _mediaList = [];
+  final List<File> path = [];
+  File? _file;
+  int urrentPage = 0;
+  int? lastPage;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
             color: Colors.black,
             size: 25.0,
           ),
+          const Spacer(),
           Image.asset('images/send.jpg'),
         ],
         backgroundColor: const Color(0xffFAFAFA),
@@ -39,8 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
         slivers: [
           SliverList(
               delegate: SliverChildBuilderDelegate((context, index) {
-            return PostWidget();
-          }, childCount: 5))
+            return const PostWidget();
+          }, childCount: 5)
+          )
         ],
       ),
     );

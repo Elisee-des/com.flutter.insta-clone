@@ -50,7 +50,7 @@ class _AddScreenState extends State<AddScreen> {
           controller: pageController,
           onPageChanged: onPageChanged,
           children: const [
-            AddPostCreen(),
+            AddPostScreen(),
             AddReelsScreen(),
           ],
         ),
@@ -62,30 +62,39 @@ class _AddScreenState extends State<AddScreen> {
             width: 120.w,
             height: 40.h,
             decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.6),
-                borderRadius: BorderRadius.circular(20.r),
+              color: Colors.black.withOpacity(0.6),
+              borderRadius: BorderRadius.circular(20.r),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    navigationTapped(0);
+                  },
+                  child: Text(
+                    'Poster',
+                    style: TextStyle(
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w500,
+                        color: _currentIndex == 0 ? Colors.white : Colors.grey),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    navigationTapped(1);
+                  },
+                  child: Text(
+                    'Réels',
+                    style: TextStyle(
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w500,
+                        color: _currentIndex == 1 ? Colors.white : Colors.grey),
+                  ),
+                ),
+              ],
+            ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text('Poster', 
-              style: TextStyle(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w500,
-                color: _currentIndex == 0 ? Colors.white : Colors.grey
-              ),
-              
-              ),
-              Text('Réels', 
-              style: TextStyle(
-                fontSize: 15.sp,
-                fontWeight: FontWeight.w500,
-                color: _currentIndex == 1 ? Colors.white : Colors.grey
-              ),
-              
-              ),
-            ],
-          ),               ),
         )
       ],
     )));

@@ -22,14 +22,12 @@ class _Navigations_ScreenState extends State<Navigations_Screen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     pageController = PageController();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     pageController.dispose();
   }
@@ -84,7 +82,7 @@ class _Navigations_ScreenState extends State<Navigations_Screen> {
       body: PageView(
         controller: pageController,
         onPageChanged: onPageChanged,
-        children: [
+        children: const [
           HomeScreen(),
           ExplorScreen(),
           AddScreen(),
